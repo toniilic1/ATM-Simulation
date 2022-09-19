@@ -24,9 +24,15 @@ class ATM:
         time.sleep(0.5)
 
     def withdraw(self):
-        amount = input("How much would you like to withdraw from your account?: ")
+        while True:
+            try:
+                amount = int(input("How much would you like to withdraw from your account?: "))
+            except ValueError:
+                print('Error; withdrawal size must be a number.')
+                continue
+            break
         while int(amount) > int(user.balance):
-            print("ERROR! You may not exceed the limit of your balance, please try a different amount.")
+            print("Error; You may not exceed the limit of your balance.")
             amount = input("How much would you like to withdraw from your account?: ")
         return amount
 
