@@ -30,12 +30,10 @@ class ATM:
             amount = input("How much would you like to withdraw from your account?: ")
         return amount
 
-
 class Card:
     def __init__(self, name, balance):
         self.name = name
         self.balance = balance
-
 
 user = Card(identity, current_bal)
 
@@ -51,7 +49,6 @@ if insert == "Yes" or "YES":
     bank.set_card()
     w_amount = bank.withdraw()
     print("You have taken exactly:",w_amount,"$ out of your account and your remaining balance is:",user.balance - int(w_amount),"$")
-
 
 elif insert == "No" or "NO":
     print("You have chosen not to insert your card in the ATM and walk away...")
